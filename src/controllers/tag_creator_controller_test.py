@@ -1,8 +1,10 @@
 import os
-
 from unittest.mock import patch
+
 from src.drivers.barcode_handler import BarcodeHandler
+
 from .tag_creator_controller import TagCreatorController
+
 
 @patch.object(BarcodeHandler, "create_barcode")
 def test_create(mock_create_barcode):

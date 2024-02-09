@@ -1,11 +1,12 @@
 import os
-
 from typing import Dict
+
 from src.drivers.barcode_handler import BarcodeHandler
+
 
 class TagCreatorController:
     """
-        Responsability for implementing business rules
+    Responsability for implementing business rules
     """
 
     def create(self, product_code: str) -> Dict:

@@ -1,5 +1,6 @@
-from src.errors.error_types.http_unprocessable_entity import HttpUnprocessableEntityError
 from src.errors.error_handler import handle_errors
+from src.errors.error_types.http_unprocessable_entity import \
+    HttpUnprocessableEntityError
 
 
 def test_tag_handle_errors_500():
@@ -11,6 +12,7 @@ def test_tag_handle_errors_500():
     assert response.status_code == 500
     assert response.body["errors"][0]["title"] == "Server Error"
     assert response.body["errors"][0]["detail"] == message
+
 
 def test_tag_handle_errors_422():
     message = "Http Unprocessable Entity Error"
