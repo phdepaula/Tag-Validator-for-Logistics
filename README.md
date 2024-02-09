@@ -31,7 +31,7 @@ For Windows, run the following command:
 For Linux, run the following command:
 
 ```
-source myenv/bin/activate
+source .venv/bin/activate
 ```
 Install all necessary libraries in your virtual environment by running the following command:
 
