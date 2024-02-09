@@ -1,3 +1,5 @@
+import os
+
 from typing import Dict
 from src.drivers.barcode_handler import BarcodeHandler
 
@@ -13,8 +15,14 @@ class TagCreatorController:
         return formatted_response
 
     def __create_tag(self, product_code: str) -> str:
+        tags_directory = os.path.join(os.getcwd(), "tags")
+        path_from_tag = os.path.join(tags_directory, product_code)
+
+        if not os.path.exists(tags_directory):
+            os.makedirs(tags_directory)
+
         barcode_handler = BarcodeHandler()
-        path_from_tag = barcode_handler.create_barcode(product_code)
+        barcode_handler.create_barcode(path_from_tag)
 
         return path_from_tag
 
