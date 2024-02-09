@@ -13,8 +13,6 @@ class TagCreatorView:
         body = http_request.body
         product_code = body["product_code"]
 
-        # logica de regra de negocio
         formatted_response = tag_creator_controller.create(product_code)
 
-        # retorno http
         return HttpResponse(status_code=200, body=formatted_response)
